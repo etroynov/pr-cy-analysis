@@ -1,0 +1,13 @@
+{
+  "name": "pr-cy-analysis",
+  "version": "0.0.1",
+  "main": "main.js",
+  "author": "Evgeniy Troynov",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^2.5.3"
+  },
+  "dependencies": {
+    "electron": "^1.7.8"
+  }
+}
