@@ -1,14 +1,15 @@
-const {app, BrowserWindow} = require('electron')
-const path = require('path')
-const url = require('url')
+import {app, BrowserWindow} from 'electron';
+import * as path from 'path';
+import * as url from 'url';
+
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
-let win
+let win: any;
 
 function createWindow () {
   // Create the browser window.
-  win = new BrowserWindow({width: 800, height: 600})
+  win = new BrowserWindow({width: 1000, height: 1000})
 
   // and load the index.html of the app.
   win.loadURL(url.format({
