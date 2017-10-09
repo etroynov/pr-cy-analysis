@@ -1,4 +1,5 @@
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
@@ -14,6 +15,7 @@ module.exports = {
   entry: {
     // Common
     main: './main',
+    app: './assets/ts/app'
   },
   output: {
     path: jsDir,
@@ -69,22 +71,14 @@ module.exports = {
     new webpack.ProvidePlugin({
       '$': 'jquery',
     }),
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        warnings: false,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        join_vars: true
-      },
-      output: {
-        comments: false
-      }
-    }),
+    // new UglifyJSPlugin({
+    //   uglifyOptions: {
+    //     beautify: false,
+    //     ecma: 6,
+    //     compress: true,
+    //     comments: false
+    //   }
+    // }),
     new ExtractTextPlugin('[name].css'),
     new OptimizeCssAssetsPlugin({
       cssProcessor: require('cssnano'),
