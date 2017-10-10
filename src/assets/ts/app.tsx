@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
+import PouchDB from 'pouchdb-browser';
 
 interface IValuteList {
   Valute: {
@@ -19,6 +20,9 @@ interface IValuteListItem {
   Previous: number;
   Value: number;
 }
+
+const db = new PouchDB('test');
+console.info(db);
 
 class HelloWorld extends React.Component<any, IValuteList> {
 
@@ -50,7 +54,7 @@ class HelloWorld extends React.Component<any, IValuteList> {
 
     for (const valuteItem in ValuteMap) {
       if (ValuteMap.hasOwnProperty(valuteItem)) {
-        const valute: IValuteListItem = ValuteMap[valuteItem];
+        const valute: IValuteListItem = (ValuteMap as any)[valuteItem];
         valuteList.push(<li>{valute.Name} ({valute.CharCode}) - {valute.Value}</li>);
       }
     }

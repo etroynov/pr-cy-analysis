@@ -4,7 +4,12 @@
   "main": "dist/main.js",
   "author": "Evgeniy Troynov",
   "license": "MIT",
+  "scripts": {
+    "start": "./node_modules/electron/dist/electron .",
+    "build": "./node_modules/webpack/bin/webpack.js --progress"
+  },
   "devDependencies": {
+    "@types/pouchdb-browser": "^6.1.1",
     "@types/react": "^16.0.10",
     "@types/react-dom": "^16.0.1",
     "@types/react-router": "^4.0.15",
@@ -14,6 +19,7 @@
     "extract-text-webpack-plugin": "^3.0.1",
     "html-webpack-plugin": "^2.30.1",
     "optimize-css-assets-webpack-plugin": "^3.2.0",
+    "pouchdb-browser": "^6.3.4",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
     "react-redux": "^5.0.6",
